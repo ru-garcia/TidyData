@@ -93,7 +93,7 @@ Dataset: average_measures.txt
 =================
 Description:
 
-Contains the average of each variable in measures.txt, by subject and activity. Subject (integer id of subject), group (TEST or TRAIN), and activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) variables were added so that each row of measurements could be identified and used for future analysis. All other variables are numeric and contain mean and std calculations performed in R after grouping data for each unqiue subject and activity combination.
+Contains the average of each variable in measures.txt, by subject and activity. Subject (integer id of subject), group (TEST or TRAIN), and activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) variables were added so that each row of measurements could be identified and used for future analysis. All other variables (avg-*) are numeric and contain averages (of means and std) calculated in R after grouping data by each unqiue combination of subject and activity.
 
 All Variables:
 
