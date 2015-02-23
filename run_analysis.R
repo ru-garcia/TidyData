@@ -1,16 +1,32 @@
+## Getting and Cleaning Data Course Project
+##
+## This R srcipt creates the function run_analysis, which imports and merges
+## data files in the UCI HAR Dataset directory and creates the two required tidy data files.
+##
+## To use, run this script in R Studio to create the function, then call the function
+## with the path to the UCI HAR Dataset directory on your machine.
+##
+## Example function call:
+## run_analysis("~/Documents/Ruben/Coursera Data Science/Getting And Cleaning Data/CourseProject/UCI HAR Dataset")
+##
+## Output:
+## Two files will be created in the UCI HAR Dataset.
+## measures.txt contains only measurements on the mean and standard deviation.
+## average_measures.txt contains average of each variable in measures_.txt,
+## for each activity and and each subject.
+
+
 run_analysis <- function(dir) {
         
-        # dir = "~/Documents/Ruben/Coursera Data Science/Getting And Cleaning Data/CourseProject1/UCI HAR Dataset"
-        
         ## Read in test and training data files 
-        testSubject <- read.table(paste(dir, "test", "subject_test.txt", sep = "/"))
-        testActivity <- read.table(paste(dir, "test", "y_test.txt", sep = "/"))
-        testMeasures <- read.table(paste(dir, "test", "X_test.txt", sep = "/"))
+        testSubject <- read.table(paste(dir, "test", "subject_test.txt", sep = "/"), colClasses="factor")
+        testActivity <- read.table(paste(dir, "test", "y_test.txt", sep = "/"), colClasses="factor")
+        testMeasures <- read.table(paste(dir, "test", "X_test.txt", sep = "/"), colClasses=c(rep("numeric", 561)))
         
-        trainSubject <- read.table(paste(dir, "train", "subject_train.txt", sep = "/"))
-        trainActivity <- read.table(paste(dir, "train", "y_train.txt", sep = "/"))
-        trainMeasures <- read.table(paste(dir, "train", "X_train.txt", sep = "/"))
-        
+        trainSubject <- read.table(paste(dir, "train", "subject_train.txt", sep = "/"), colClasses="factor")
+        trainActivity <- read.table(paste(dir, "train", "y_train.txt", sep = "/"), colClasses="factor")
+        trainMeasures <- read.table(paste(dir, "train", "X_train.txt", sep = "/"), colClasses=c(rep("numeric", 561)))
+ 
         ## Read in features and activity label data files
         feature <- read.table(paste(dir, "features.txt", sep = "/"))
         activity <- read.table(paste(dir, "activity_labels.txt", sep = "/"))
@@ -20,31 +36,30 @@ run_analysis <- function(dir) {
         colnames(trainMeasures) <- feature$V2
         
         ## Combine test data files
-        test <- cbind("subject" = as.factor(testSubject$V1),
-                      "subjectType" = as.factor("TEST"),
-                      "activity" = as.factor(testActivity$V1),
+        test <- cbind("subject" = testSubject$V1,
+                      "group" = "TEST",
+                      "activity" = testActivity$V1,
                       testMeasures[ , 1:561])
-        
+                                   
         ## Combine training data files
-        train <- cbind("subject" = as.factor(trainSubject$V1),
-                       "subjectType" = as.factor("TRAIN"),
-                      "activity" = as.factor(trainActivity$V1),
+        train <- cbind("subject" = trainSubject$V1,
+                       "group" = "TRAIN",
+                      "activity" = trainActivity$V1,
                       trainMeasures[ , 1:561])
-
+        
         ## Merge test and training data
         allData <- rbind(test, train)
-        allData$activity <- as.character(allData$activity)
-       
+             
         ## Update activity label with activity name
+        allData$activity <- as.character(allData$activity)
         allData$activity[allData$activity == "1"] <- "WALKING"
         allData$activity[allData$activity == "2"] <- "WALKING_UPSTAIRS"
         allData$activity[allData$activity == "3"] <- "WALKING_DOWNSTAIRS"
         allData$activity[allData$activity == "4"] <- "SITTING"
         allData$activity[allData$activity == "5"] <- "STANDING"
         allData$activity[allData$activity == "6"] <- "LAYING"
-        
         allData$activity <- as.factor(allData$activity)
-
+        
         ## Get columns containing mean and standard deviation measurements
         columnId <- data.frame(sapply(c("mean\\(\\)", "std\\(\\)"),
                                        grepl,
@@ -52,24 +67,21 @@ run_analysis <- function(dir) {
                                        ignore.case = TRUE))
         
         columnList <- which(columnId[ , 1] == 1 | columnId[ , 2] == 1)
-        # length(columnList) 86, 79, 66
+        # length(columnList)
         
-        ## Tidy Data Set #1: create file measurements_tidy_data1.txt containing
-        ## only measurements on the mean and standard deviation.
-        subset1 <- allData[ , c(1:3, columnList)]
-        write.table(subset1, "measurements_tidy_data1.txt", row.name = FALSE)
+        ## Tidy Data Set #1: create file measures.txt containing only
+        ## measurements on the mean and standard deviation.
+        subset <- allData[ , c(1:3, columnList)]
         
-        ## Tidy Data Set #2: create file measurements_tidy_data2.txt containing
-        ## average of each variable in tidy data set #1, for each activity and
-        ## and each subject.
-        subset2 <- finalData[finalData$subject == 2 & finalData$activity == "STANDING", ]
-        write.table(subset2, "measurements_tidy_data2.txt", row.name = FALSE)
-
-        unique(paste(finalData$subject, finalData$activity))
-
+        write.table(subset, paste(dir, "measures.txt", sep = "/"), row.name = FALSE)
         
-        ## Test function call
-        ## run_analysis("~/Documents/Ruben/Coursera Data Science/Getting And Cleaning Data/CourseProject1/UCI HAR Dataset", moreData = TRUE)
-
+        ## Tidy Data Set #2: create file average_measures.txt containing
+        ## average of each variable in measures.txt, for each activity and subject.
+        library(dplyr)
+        grouped <- group_by(subset, subject, group, activity)
+        groupedAverage <- summarise_each(grouped, funs(mean))
+        colnames(groupedAverage)[4:69] <- paste("avg", colnames(groupedAverage)[4:69], sep = "-")
+        write.table(groupedAverage, paste(dir, "average_measures.txt", sep = "/"), row.name = FALSE)
+        
 }
         
