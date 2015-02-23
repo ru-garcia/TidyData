@@ -20,75 +20,75 @@ Contains only measurements on the mean and standard deviation of each measuremen
 
 Variables:
 
-1 subject
-2 group
-3 activity
-4 tBodyAcc-mean()-X
-5 tBodyAcc-mean()-Y
-6 tBodyAcc-mean()-Z
-7 tBodyAcc-std()-X
-8 tBodyAcc-std()-Y
-9 tBodyAcc-std()-Z
-10 tGravityAcc-mean()-X
-11 tGravityAcc-mean()-Y
-12 tGravityAcc-mean()-Z
-13 tGravityAcc-std()-X
-14 tGravityAcc-std()-Y
-15 tGravityAcc-std()-Z
-16 tBodyAccJerk-mean()-X
-17 tBodyAccJerk-mean()-Y
-18 tBodyAccJerk-mean()-Z
-19 tBodyAccJerk-std()-X
-20 tBodyAccJerk-std()-Y
-21 tBodyAccJerk-std()-Z
-22 tBodyGyro-mean()-X
-23 tBodyGyro-mean()-Y
-24 tBodyGyro-mean()-Z
-25 tBodyGyro-std()-X
-26 tBodyGyro-std()-Y
-27 tBodyGyro-std()-Z
-28 tBodyGyroJerk-mean()-X
-29 tBodyGyroJerk-mean()-Y
-30 tBodyGyroJerk-mean()-Z
-31 tBodyGyroJerk-std()-X
-32 tBodyGyroJerk-std()-Y
-33 tBodyGyroJerk-std()-Z
-34 tBodyAccMag-mean()
-35 tBodyAccMag-std()
-36 tGravityAccMag-mean()
-37 tGravityAccMag-std()
-38 tBodyAccJerkMag-mean()
-39 tBodyAccJerkMag-std()
-40 tBodyGyroMag-mean()
-41 tBodyGyroMag-std()
-42 tBodyGyroJerkMag-mean()
-43 tBodyGyroJerkMag-std()
-44 fBodyAcc-mean()-X
-45 fBodyAcc-mean()-Y
-46 fBodyAcc-mean()-Z
-47 fBodyAcc-std()-X
-48 fBodyAcc-std()-Y
-49 fBodyAcc-std()-Z
-50 fBodyAccJerk-mean()-X
-51 fBodyAccJerk-mean()-Y
-52 fBodyAccJerk-mean()-Z
-53 fBodyAccJerk-std()-X
-54 fBodyAccJerk-std()-Y
-55 fBodyAccJerk-std()-Z
-56 fBodyGyro-mean()-X
-57 fBodyGyro-mean()-Y
-58 fBodyGyro-mean()-Z
-59 fBodyGyro-std()-X
-60 fBodyGyro-std()-Y
-61 fBodyGyro-std()-Z
-62 fBodyAccMag-mean()
-63 fBodyAccMag-std()
-64 fBodyBodyAccJerkMag-mean()
-65 fBodyBodyAccJerkMag-std()
-66 fBodyBodyGyroMag-mean()
-67 fBodyBodyGyroMag-std()
-68 fBodyBodyGyroJerkMag-mean()
-69 fBodyBodyGyroJerkMag-std()
+<br>	1 subject
+<br>	2 group
+<br>	3 activity
+<br>	4 tBodyAcc-mean()-X
+<br>	5 tBodyAcc-mean()-Y
+<br>	6 tBodyAcc-mean()-Z
+<br>	7 tBodyAcc-std()-X
+<br>	8 tBodyAcc-std()-Y
+<br>	9 tBodyAcc-std()-Z
+<br>	10 tGravityAcc-mean()-X
+<br>	11 tGravityAcc-mean()-Y
+<br>	12 tGravityAcc-mean()-Z
+<br>	13 tGravityAcc-std()-X
+<br>	14 tGravityAcc-std()-Y
+<br>	15 tGravityAcc-std()-Z
+<br>	16 tBodyAccJerk-mean()-X
+<br>	17 tBodyAccJerk-mean()-Y
+<br>	18 tBodyAccJerk-mean()-Z
+<br>	19 tBodyAccJerk-std()-X
+<br>	20 tBodyAccJerk-std()-Y
+<br>	21 tBodyAccJerk-std()-Z
+<br>	22 tBodyGyro-mean()-X
+<br>	23 tBodyGyro-mean()-Y
+<br>	24 tBodyGyro-mean()-Z
+<br>	25 tBodyGyro-std()-X
+<br>	26 tBodyGyro-std()-Y
+<br>	27 tBodyGyro-std()-Z
+<br>	28 tBodyGyroJerk-mean()-X
+<br>	29 tBodyGyroJerk-mean()-Y
+<br>	30 tBodyGyroJerk-mean()-Z
+<br>	31 tBodyGyroJerk-std()-X
+<br>	32 tBodyGyroJerk-std()-Y
+<br>	33 tBodyGyroJerk-std()-Z
+<br>	34 tBodyAccMag-mean()
+<br>	35 tBodyAccMag-std()
+<br>	36 tGravityAccMag-mean()
+<br>	37 tGravityAccMag-std()
+<br>	38 tBodyAccJerkMag-mean()
+<br>	39 tBodyAccJerkMag-std()
+<br>	40 tBodyGyroMag-mean()
+<br>	41 tBodyGyroMag-std()
+<br>	42 tBodyGyroJerkMag-mean()
+<br>	43 tBodyGyroJerkMag-std()
+<br>	44 fBodyAcc-mean()-X
+<br>	45 fBodyAcc-mean()-Y
+<br>	46 fBodyAcc-mean()-Z
+<br>	47 fBodyAcc-std()-X
+<br>	48 fBodyAcc-std()-Y
+<br>	49 fBodyAcc-std()-Z
+<br>	50 fBodyAccJerk-mean()-X
+<br>	51 fBodyAccJerk-mean()-Y
+<br>	52 fBodyAccJerk-mean()-Z
+<br>	53 fBodyAccJerk-std()-X
+<br>	54 fBodyAccJerk-std()-Y
+<br>	55 fBodyAccJerk-std()-Z
+<br>	56 fBodyGyro-mean()-X
+<br>	57 fBodyGyro-mean()-Y
+<br>	58 fBodyGyro-mean()-Z
+<br>	59 fBodyGyro-std()-X
+<br>	60 fBodyGyro-std()-Y
+<br>	61 fBodyGyro-std()-Z
+<br>	62 fBodyAccMag-mean()
+<br>	63 fBodyAccMag-std()
+<br>	64 fBodyBodyAccJerkMag-mean()
+<br>	65 fBodyBodyAccJerkMag-std()
+<br>	66 fBodyBodyGyroMag-mean()
+<br>	67 fBodyBodyGyroMag-std()
+<br>	68 fBodyBodyGyroJerkMag-mean()
+<br>	69 fBodyBodyGyroJerkMag-std()
 
 Dataset: average_measures.txt
 =================
