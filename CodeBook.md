@@ -1,5 +1,5 @@
 # TidyData
-Getting and Cleaning Data Course Project - CodeBook.md
+Getting and Cleaning Data Course Project
 
 
 Works Cited:
@@ -13,7 +13,7 @@ Summary:
 Immediately below are codebooks (variable lists) for the two tidy data files created as a part of the Getting and Cleaning Data Course Project. The original UCI study codebook has been added below that (section: Feature Selection) and includes feature descriptions and the complete list of variables.
 
 Dataset: measures.txt
-Description: contains only measurements on the mean and standard deviation of each measurement. Subject, group (test or train), and activity variables were added so that each row of measurements could be identified and used for future analysis.
+Description: contains only measurements on the mean and standard deviation of each measurement. Subject (subject id), group (test or train), and activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) variables were added so that each row of measurements could be identified and used for future analysis. All other variables are numeric and contain mean and std calculations from the source data directly.
 
 Variables:
 =================
@@ -89,7 +89,7 @@ Variables:
 
 
 Dataset: average_measures.txt
-Description: contains the average of each variable in measures.txt, by subject and activity. Subject, group (test or train), and activity were added so that each row of measurements could be identified and used for future analysis.
+Description: contains the average of each variable in measures.txt, by subject and activity. Subject (subject id), group (test or train), and activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) variables were added so that each row of measurements could be identified and used for future analysis. All other variables are numeric and contain mean and std calculations performed in R after grouping data for each unqiue subject and activity combination.
 
 Variables:
 =================
