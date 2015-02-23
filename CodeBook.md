@@ -14,7 +14,9 @@ Immediately below are codebooks (variable lists) for the two tidy data files cre
 
 Dataset: measures.txt
 =================
-Description: contains only measurements on the mean and standard deviation of each measurement. Subject (subject id), group (test or train), and activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) variables were added so that each row of measurements could be identified and used for future analysis. All other variables are numeric and contain mean and std calculations from the source data directly.
+Description:
+
+Contains only measurements on the mean and standard deviation of each measurement. Subject (integer id of subject), group (TEST or TRAIN), and activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) variables were added so that each row of measurements could be identified and used for future analysis. All other variables are numeric and contain mean and std calculations from the source data directly.
 
 Variables:
 
@@ -91,7 +93,9 @@ Variables:
 
 Dataset: average_measures.txt
 =================
-Description: contains the average of each variable in measures.txt, by subject and activity. Subject (subject id), group (test or train), and activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) variables were added so that each row of measurements could be identified and used for future analysis. All other variables are numeric and contain mean and std calculations performed in R after grouping data for each unqiue subject and activity combination.
+Description:
+
+Contains the average of each variable in measures.txt, by subject and activity. Subject (integer id of subject), group (TEST or TRAIN), and activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) variables were added so that each row of measurements could be identified and used for future analysis. All other variables are numeric and contain mean and std calculations performed in R after grouping data for each unqiue subject and activity combination.
 
 Variables:
 
@@ -195,7 +199,7 @@ fBodyAccJerkMag
 fBodyGyroMag
 fBodyGyroJerkMag
 
-## The set of variables that were estimated from these signals are: 
+The set of variables that were estimated from these signals are: 
 
 mean(): Mean value
 std(): Standard deviation
