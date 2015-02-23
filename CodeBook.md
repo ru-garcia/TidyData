@@ -90,7 +90,6 @@ Variables:
 68 fBodyBodyGyroJerkMag-mean()
 69 fBodyBodyGyroJerkMag-std()
 
-
 Dataset: average_measures.txt
 =================
 Description:
