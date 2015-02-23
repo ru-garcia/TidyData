@@ -16,7 +16,7 @@ Dataset: measures.txt
 =================
 Description:
 
-Contains only measurements on the mean and standard deviation of each measurement. Subject (integer id of subject), group (TEST or TRAIN), and activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) variables were added so that each row of measurements could be identified and used for future analysis. All other variables are numeric and contain mean and std calculations from the source data directly.
+Each record contains only measurements on the mean and standard deviation for every record in the source data sets (both the test and training). Subject (integer id of subject), group (TEST or TRAIN), and activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) variables were added so that each row of measurements could be identified and used for future analysis. All other variables are numeric and contain mean and std calculations from the source data directly.
 
 All Variables:
 <br>	1 subject
@@ -93,10 +93,9 @@ Dataset: average_measures.txt
 =================
 Description:
 
-Contains the average of each variable in measures.txt, by subject and activity. Subject (integer id of subject), group (TEST or TRAIN), and activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) variables were added so that each row of measurements could be identified and used for future analysis. All other variables (avg-*) are numeric and contain averages (of means and stds) calculated in R after grouping data by each unqiue combination of subject and activity.
+Each record contains the average of all variables in measures.txt for each subject and activity. Subject (integer id of subject), group (TEST or TRAIN), and activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) variables were added so that each row of measurements could be identified and used for future analysis. All other variables (avg-*) are numeric and contain averages (of means and stds) calculated in R after grouping data by each unqiue combination of subject and activity.
 
 All Variables:
-
 <br>	1 subject
 <br>	2 group
 <br>	3 activity
@@ -177,7 +176,6 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
-
 <br>	tBodyAcc-XYZ
 <br>	tGravityAcc-XYZ
 <br>	tBodyAccJerk-XYZ
@@ -197,7 +195,6 @@ These signals were used to estimate variables of the feature vector for each pat
 <br>	fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are: 
-
 <br>	mean(): Mean value
 <br>	std(): Standard deviation
 <br>	mad(): Median absolute deviation 
